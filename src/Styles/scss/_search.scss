@@ -1,0 +1,16 @@
+#flexSearch {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+}
+
+#iptSearch {
+    flex: .2 1 700px;
+    min-width: 220px;
+}
+
+#iptSubmitSearch {
+    flex: .1 2 100px;
+    background-color: rgb(177, 175, 175);
+}
