@@ -1,0 +1,5 @@
+export const POKEMONS = {
+    WILL_SET_POKEMONS: "WILL_SET_POKEMONS",
+    SET_POKEMONS: "SET_POKEMONS",
+    CLEAN: "CLEAN",
+};

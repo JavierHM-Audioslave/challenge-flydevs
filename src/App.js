@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { willSetPokemons } from "./Actions/pokemonsAction";
+
 // import logo from './logo.svg';
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
@@ -6,7 +9,12 @@ import {Router, Route, Switch} from "react-router-dom";
 import history from "./Helpers/history";
 import Home from "./Home";
 
-function App() {
+// function App() {
+const App = () => {
+
+  const dispatch = useDispatch();
+  dispatch(willSetPokemons());
+
   return (
     <Router history={history}>
       <Switch>
