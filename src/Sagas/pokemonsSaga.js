@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from "redux-saga/effects";
 import { setPokemons, cleanStore } from "../Actions/pokemonsAction";
-import searchAllPokemons from "../Helpers/searchPokemons";
+import { searchAllPokemons } from "../Helpers/searchPokemons";
 import { POKEMONS } from "../Constants/actions";
 
 function *pokemonsHandler() {
