@@ -15,6 +15,7 @@ function *pokemonsHandler() {
         throw Error("Error en el servidor. Comunicarse con el desarrollador del frontend y/o el administrador de la API");
     }
 
+    console.log(pokemons);
     yield put(setPokemons(pokemons.data.results));    
 };
 

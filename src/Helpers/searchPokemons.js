@@ -2,11 +2,11 @@ import Axios from "axios";
 
 
 
-export const searchAllPokemons = async () => {
+export const searchAllPokemons = async () => {  // ACLARACIÓN: esta función es llamada por la saga que escucha a la acción "WILL_SET_POKEMONS" //
 
     try {
         const pokemons = await Axios.get("https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0");
-        console.log(pokemons);
+        // console.log(pokemons);
         return pokemons;
     } catch(error) {
         console.error(error);
@@ -14,7 +14,7 @@ export const searchAllPokemons = async () => {
 };
 
 
-export const searchPokemonsByInsertion = async (e, pokemons) => {
+export const searchPokemonsByInsertion = async (e, pokemons) => {   // ACLARACIÓN: esta función es llamada por la función "searchImagesOfPokemons" (la que está abajo de todo en este archivo) y su objetivo es obtener las urls de las imágenes para cada pokemon que cumpla con el/los pokemones que el usuario haya escrito en el input. //
 
     e.preventDefault();
     const typeEnteredByUser = document.getElementById("iptSearch");
@@ -33,36 +33,32 @@ export const searchPokemonsByInsertion = async (e, pokemons) => {
         listOfGeneralInfo.push(element.url);
     });
 
-    const urlsToForms = [];
     const promises1 = listOfGeneralInfo.map( async element => {
         try{
             const hola = await Axios.get(element);
             if( hola.status === 200 ) {
-                urlsToForms.push(hola.data);   // urlsToForms es https://pokeapi.co/api/v2/pokemon/25/ el cual contiene las forms (que contiene las imágenes) y las abilities. //
+                const urlsToSprites = hola.data   // urlsTosprites es https://pokeapi.co/api/v2/pokemon/25/ el cual contiene los sprites (que contiene las urls de las imágenes). //
 
-                let urlFrontDefault = [];
-
-                const promises2 = urlsToForms.map( async element => {
-                    const urlToImages = element.forms[0].url;
-                    const returnOfService = await Axios.get(urlToImages);
-                    if( returnOfService.status === 200 ) {
-                        const urlFrontAux = returnOfService.data.sprites.front_default;
-                        urlFrontDefault.push(urlFrontAux);
-                        return urlFrontAux;
-                    };
-                });
-                const sprites = await Promise.all(promises2);
-                console.log(sprites);
-                return sprites;
-
-            };
+                console.log(urlsToSprites);
+                const urls = urlsToSprites.sprites.front_default;
+                console.log(urls);
+                return urls;
+            } else {
+                console.error(`Se produjo un error al buscar la url que da acceso a la url que contiene las imágenes de los Pokemones`)
+            }
         } catch(error) {
-            console.error(error);
-            return;
-        }
+            console.error(`Error del lado del servidor. A continuación, el detalle: ${error}`);        }
 
     });
 
-    const urls = await Promise.all(promises1);
-    console.log(urls);
+    return promises1;
 };
+
+
+export const searchImagesOfPokemons = async (e, pokemons, setListOfImages) => {  // ACLARACIÓN: esta función es llamada por el evento "onSubmit" del componente "Search.jsx" que se activa cuando el usuario clickea en el botón "Buscar". //
+    const retorno = await searchPokemonsByInsertion(e, pokemons);
+    // console.log(retorno);
+    const promises = await Promise.all(retorno);
+    // console.log(promises);
+    setListOfImages(promises);
+}
