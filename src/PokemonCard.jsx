@@ -1,12 +1,14 @@
 import React from "react";
 
 
-const PokemonCard = ({image, index: id}) => {   // NOTA: renombro "index" (que es la variable enviada desde el componente padre) a "id". //
-    // console.log(id);
+const PokemonCard = ({spriteAndName, index: id}) => {   // NOTA: renombro "index" (que es la variable enviada desde el componente padre) a "id". //
+    console.log(spriteAndName);
 
     return(
         <>
-            <img src={image} alt="Pokemon" />
+            <br />
+            <img src={spriteAndName.sprite} alt={spriteAndName.sprite} />
+            <span>{spriteAndName.name}</span>
         </>
     )
 };

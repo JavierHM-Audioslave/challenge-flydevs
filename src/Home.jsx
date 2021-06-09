@@ -6,8 +6,8 @@ import ListOfPokemons from "./ListOfPokemons";
 
 const Home = () => {
 
-    const [listOfImages, setListOfImages] = useState();
-    // console.log(listOfImages);
+    const [spriteAndName, setSpriteAndName] = useState();
+    // console.log(spriteAndName);
 
 
     return(
@@ -15,10 +15,10 @@ const Home = () => {
             <Header/>
             <main>
                 <Search
-                    setListOfImages={setListOfImages}
+                    setSpriteAndName={setSpriteAndName}
                 />
-                {listOfImages && <ListOfPokemons
-                    listOfImages={listOfImages} // El problema es que este estado tiene promesas y, para renderizar, esto no se puede. Por lo tanto, hay que solucionar esto como está en "https://forum.freecodecamp.org/t/react-js-error-objects-are-not-valid-as-a-react-child/387153".
+                {spriteAndName && <ListOfPokemons
+                    spriteAndName={spriteAndName} // El problema es que este estado tiene promesas y, para renderizar, esto no se puede. Por lo tanto, hay que solucionar esto como está en "https://forum.freecodecamp.org/t/react-js-error-objects-are-not-valid-as-a-react-child/387153".
                 />}
             </main>
             

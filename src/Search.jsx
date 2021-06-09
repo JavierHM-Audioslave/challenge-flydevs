@@ -5,12 +5,12 @@ import { useSelector } from "react-redux";
 import { getPokemons } from "./Selectors"
 
 
-const Search = ({setListOfImages}) => {
+const Search = ({setSpriteAndName}) => {
 
     const pokemons = useSelector(getPokemons);
 
     return(
-        <Form className="mb-5" onSubmit={ e => searchImagesOfPokemons(e, pokemons, setListOfImages) }>
+        <Form className="mb-5" onSubmit={ e => searchImagesOfPokemons(e, pokemons, setSpriteAndName) }>
             <div id="flexSearch">
                 <Input id="iptSearch" className="me-2" type="text" name="iptSearch" placeholder="Ingrese el nombre a buscar" />
                 <Input id="iptSubmitSearch" type="submit" value="Buscar" />

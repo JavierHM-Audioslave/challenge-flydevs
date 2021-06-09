@@ -40,9 +40,14 @@ export const searchPokemonsByInsertion = async (e, pokemons) => {   // ACLARACI�
                 const urlsToSprites = hola.data   // urlsTosprites es https://pokeapi.co/api/v2/pokemon/25/ el cual contiene los sprites (que contiene las urls de las imágenes). //
 
                 console.log(urlsToSprites);
-                const urls = urlsToSprites.sprites.front_default;
-                console.log(urls);
-                return urls;
+                const spriteAndNamePhoto = {
+                    sprite: urlsToSprites.sprites.front_default,
+                    name: urlsToSprites.name
+                }
+                // console.log(urls);
+                console.log(spriteAndNamePhoto);
+                // return urls;
+                return spriteAndNamePhoto;
             } else {
                 console.error(`Se produjo un error al buscar la url que da acceso a la url que contiene las imágenes de los Pokemones`)
             }
@@ -51,14 +56,12 @@ export const searchPokemonsByInsertion = async (e, pokemons) => {   // ACLARACI�
 
     });
 
-    return promises1;
+    return await Promise.all(promises1);    // ACLARACIÓN: coneste "Promise.all" lo que hago es retrasar la ejecución de esta línea (que es el return) hasta que todas las promesas que se están ejecutando en el map estén terminadas. De lo contrario, apenas se llega a la línea del map se pasa a esta sin esperar que se terminen siquiera de procesar todos los elementos del array que itera el map. //
 };
 
 
-export const searchImagesOfPokemons = async (e, pokemons, setListOfImages) => {  // ACLARACIÓN: esta función es llamada por el evento "onSubmit" del componente "Search.jsx" que se activa cuando el usuario clickea en el botón "Buscar". //
+export const searchImagesOfPokemons = async (e, pokemons, setSpriteAndName) => {  // ACLARACIÓN: esta función es llamada por el evento "onSubmit" del componente "Search.jsx" que se activa cuando el usuario clickea en el botón "Buscar". //
     const retorno = await searchPokemonsByInsertion(e, pokemons);
-    // console.log(retorno);
-    const promises = await Promise.all(retorno);
-    // console.log(promises);
-    setListOfImages(promises);
+    console.log(retorno);
+    setSpriteAndName(retorno);
 }
