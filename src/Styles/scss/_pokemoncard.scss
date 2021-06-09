@@ -1,0 +1,31 @@
+.allignment {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+}
+
+.cardwrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 180px;
+    width: 20em;
+    border: solid 1px orange;
+
+    &__allignmentspecie {
+        flex: 1 1 30px;
+        border: solid 1px blue;
+    }
+    
+    &__allignmentname {
+        flex: 1 1 30px;
+        border: solid 1px red;
+    }
+    
+    &__allignmentsprite {
+        flex: 1 1 100px;
+        border: solid 1px green;
+    }
+}

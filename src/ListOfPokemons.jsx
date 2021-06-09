@@ -3,13 +3,15 @@ import PokemonCard from "./PokemonCard";
 
 
 
-const ListOfPokemons = ({spriteAndName}) => {
-    console.log(spriteAndName);
+const ListOfPokemons = ({spriteSpecieAndName}) => {
+    console.log(spriteSpecieAndName);
 
     return(
         <>
-            <h4>Resultados de la búsqueda</h4>
-            {spriteAndName.map( (spriteAndName, index) => <PokemonCard spriteAndName={spriteAndName} index={index}/>)}
+            <h2>Resultados de la búsqueda</h2>
+            <div className="allignment">
+            {spriteSpecieAndName.map(spriteSpecieAndName => <PokemonCard spriteSpecieAndName={spriteSpecieAndName} />)}
+            </div>
         </>
     );
 }
