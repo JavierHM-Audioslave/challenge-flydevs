@@ -18,7 +18,7 @@ const Home = () => {
                     setSpriteSpecieAndName={setSpriteSpecieAndName}
                 />
                 {spriteSpecieAndName && <ListOfPokemons
-                    spriteSpecieAndName={spriteSpecieAndName} // El problema es que este estado tiene promesas y, para renderizar, esto no se puede. Por lo tanto, hay que solucionar esto como está en "https://forum.freecodecamp.org/t/react-js-error-objects-are-not-valid-as-a-react-child/387153".
+                    spriteSpecieAndName={spriteSpecieAndName}
                 />}
             </main>
             

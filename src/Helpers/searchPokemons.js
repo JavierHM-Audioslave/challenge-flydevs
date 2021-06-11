@@ -6,7 +6,6 @@ export const searchAllPokemons = async () => {  // ACLARACIÓN: esta función es
 
     try {
         const pokemons = await Axios.get("https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0");
-        // console.log(pokemons);
         return pokemons;
     } catch(error) {
         console.error(error);

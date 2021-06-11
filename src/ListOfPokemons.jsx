@@ -9,8 +9,8 @@ const ListOfPokemons = ({spriteSpecieAndName}) => {
     return(
         <>
             <h2>Resultados de la búsqueda</h2>
-            <div className="allignment">
-            {spriteSpecieAndName.map(spriteSpecieAndName => <PokemonCard spriteSpecieAndName={spriteSpecieAndName} />)}
+            <div id="columnwrapper" className="allignment">
+                {spriteSpecieAndName && spriteSpecieAndName.map(spriteSpecieAndName => <PokemonCard spriteSpecieAndName={spriteSpecieAndName} />)}
             </div>
         </>
     );
