@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { willSetPokemons } from "./Actions/pokemonsAction";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
