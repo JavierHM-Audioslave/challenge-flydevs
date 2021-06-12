@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Home from "./Home";
+import Home from "../Components/Home";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./Reducers";
+import rootReducer from "../Reducers";
 
 
 describe("Home", () => {

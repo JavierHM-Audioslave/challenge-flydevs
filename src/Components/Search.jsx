@@ -1,8 +1,8 @@
 import React from "react";
 import { Form, Input } from "reactstrap";
-import { searchImagesOfPokemons } from "./Helpers/searchPokemons"
+import { searchImagesOfPokemons } from "../Helpers/searchPokemons"
 import { useSelector } from "react-redux";
-import { getPokemons } from "./Selectors"
+import { getPokemons } from "../Selectors"
 
 
 const Search = ({setSpriteSpecieAndName}) => {

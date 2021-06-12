@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Styles/App.css";
 import {Router, Route, Switch} from "react-router-dom";
 import history from "./Helpers/history";
-import Home from "./Home";
+import Home from "./Components/Home";
 
 // function App() {
 const App = () => {

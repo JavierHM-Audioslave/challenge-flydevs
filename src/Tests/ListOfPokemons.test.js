@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ListOfPokemons from "./ListOfPokemons";
+import ListOfPokemons from "../Components/ListOfPokemons";
 
 describe("ListOfPokemons", () => {
 
