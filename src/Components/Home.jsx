@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Search from "./Search";
+import Footer from "./Footer";
 import ListOfPokemons from "./ListOfPokemons";
 
 
@@ -21,7 +22,7 @@ const Home = () => {
                     spriteSpecieAndName={spriteSpecieAndName}
                 />}
             </main>
-            
+            <Footer/>
         </>
     );
 }

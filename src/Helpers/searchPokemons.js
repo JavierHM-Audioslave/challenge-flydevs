@@ -21,9 +21,6 @@ export const searchPokemonsByInsertion = async pokemons => {   // ACLARACIÓN: e
     const pokemonsComplyingUserInsertion = pokemons.filter( element => {
         const regex = new RegExp(regexToLookFor,"i");
         if( regex.test(element.name) ) {
-            console.log(regex);
-            console.log(element.name);
-            console.log(element);
             return true;
         }
         return false;

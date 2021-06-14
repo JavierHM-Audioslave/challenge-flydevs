@@ -1,0 +1,22 @@
+footer {
+    background-color: rgb(88, 87, 87);
+    z-index: 2;
+    position: fixed; 
+    bottom: 0;
+    width: 95%;
+}
+
+.wrapperdiv {
+    background-color: yellow;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexdiv {
+    flex: 1 1 300px;
+}
+
+.hiperlinkdiv {
+    float: right;
+}

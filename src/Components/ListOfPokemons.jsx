@@ -9,7 +9,7 @@ const ListOfPokemons = ({spriteSpecieAndName}) => {
     return(
         <>
             <h2>Resultados de la búsqueda</h2>
-            <div id="columnwrapper" className="allignment">
+            <div style={{marginBottom: "100px"}} id="columnwrapper" className="allignment">
                 {spriteSpecieAndName && spriteSpecieAndName.map(spriteSpecieAndName => <PokemonCard spriteSpecieAndName={spriteSpecieAndName} />)}
             </div>
         </>

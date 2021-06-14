@@ -106,6 +106,36 @@ body {
   border: solid 1px green;
 }
 
+footer {
+  background-color: #585757;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  width: 95%;
+}
+
+.wrapperdiv {
+  background-color: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexdiv {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+}
+
+.hiperlinkdiv {
+  float: right;
+}
+
 .App {
   text-align: center;
 }
